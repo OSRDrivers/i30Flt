@@ -1,0 +1,32 @@
+LANGUAGE 0x9,0x1
+1 11 "i30FltEvents_MSG00001.bin"
+1 WEVT_TEMPLATE "i30FltEventsTEMP.BIN"
+
+#include <windows.h>
+
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DRV
+#define VER_FILESUBTYPE             VFT2_DRV_SYSTEM
+
+#define VER_FILEDESCRIPTION_STR     "i30Flt Filter Driver"
+#define VER_INTERNALNAME_STR        "i30Flt.sys"
+
+#define VER_FILEVERSION             1,0
+#define VER_FILEVERSION_STR         "1.0"
+
+#undef  VER_PRODUCTVERSION
+#define VER_PRODUCTVERSION          VER_FILEVERSION
+
+#undef  VER_PRODUCTVERSION_STR
+#define VER_PRODUCTVERSION_STR      VER_FILEVERSION_STR
+
+#define VER_LEGALCOPYRIGHT_STR      "Copyright (C) 2021 OSR Open Systems Resources, Inc."
+
+#undef  VER_COMPANYNAME_STR
+#define VER_COMPANYNAME_STR         "OSR Open Systems Resources, Inc."
+
+#undef  VER_PRODUCTNAME_STR
+#define VER_PRODUCTNAME_STR         "Filter to block corruption from opening $i30:$bitmap"
+
+#include "common.ver"

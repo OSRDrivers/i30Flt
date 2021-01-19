@@ -1,0 +1,65 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<instrumentationManifest
+    xmlns="http://schemas.microsoft.com/win/2004/08/events"
+    xmlns:win="http://manifests.microsoft.com/win/2004/08/windows/events"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://schemas.microsoft.com/win/2004/08/events eventman.xsd"
+    >
+  <instrumentation>
+    <events>
+      <provider
+          guid="{0C878CEC-B4EB-4E15-AB21-6FA43FF02B7A}"
+          messageFileName="%Systemroot%\System32\drivers\i30Flt.sys"
+          name="i30Flt"
+          resourceFileName="%SystemRoot%\System32\drivers\i30Flt.SYS"
+          symbol="I30FLT_PROVIDER"
+          >
+        <channels>
+          <importChannel
+              chid="SYSTEM"
+              name="System"
+              />
+        </channels>          
+        <templates>
+          <template tid="tid_OperationBlocked">
+            <data
+                inType="win:HexInt32"
+                name="Operation"
+                />
+            <data
+                inType="win:UInt16"
+                name="FileNameLength"
+                />
+            <data
+                inType="win:UnicodeString"
+                name="FileName"
+                length="FileNameLength"
+                />
+          </template>
+        </templates>
+        <events>
+           <event
+              channel="SYSTEM"
+              message="$(string.OperationBlocked.EventMessage)"
+              level="win:Warning"
+              opcode="win:Info"
+              symbol="OperationBlocked"
+              template="tid_OperationBlocked"
+              value="1"
+              />
+        </events>
+      </provider>
+    </events>
+  </instrumentation>
+  <localization xmlns="http://schemas.microsoft.com/win/2004/08/events">
+    <resources culture="en-US">
+      <stringTable>
+        <string
+            id="OperationBlocked.EventMessage"
+            value="Blocked access to invalid path"
+            />
+      </stringTable>
+    </resources>
+  </localization>
+</instrumentationManifest>

@@ -1,0 +1,9 @@
+# Build results
+[Dd]ebug/
+[Rr]elease/
+[Xx]64/
+[Xx]86/
+
+# Visual Studio 2015 cache/options directory
+.vs/
+
