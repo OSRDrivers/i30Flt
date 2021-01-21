@@ -24,7 +24,7 @@ Open an elevated command prompt and execute the following commands:
 
 	RUNDLL32.EXE SETUPAPI.DLL,InstallHinfSection DefaultInstall 132 .\i30flt.inf
 
-	wevtuil im i30flt.man
+	wevtutil im i30flt.man
 
 	fltmc load i30flt
 
