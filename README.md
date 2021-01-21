@@ -20,15 +20,14 @@ the mpact of this to be minimal.
 The provided solution builds using the 2004 WDK. 
 
 # Installing the sample #
-You can install the filter with the following command line:
+Open an elevated command prompt and execute the following commands:
 
-	RUNDLL32.EXE SETUPAPI.DLL,InstallHinfSection DefaultInstall 132 i30flt.inf
-
-You'll also need to import the manifest in order to decode the events sent to the event log:
+	RUNDLL32.EXE SETUPAPI.DLL,InstallHinfSection DefaultInstall 132 .\i30flt.inf
 
 	wevtuil im i30flt.man
 
-The filter will automatically load and do its thing on subsequent reboots. To uninstall the filter execute the following:
+	fltmc load i30flt
 
+To uninstall the filter execute the following:
 
-	RUNDLL32.EXE SETUPAPI.DLL,InstallHinfSection DefaultUninstall 132 i30flt.inf
+	RUNDLL32.EXE SETUPAPI.DLL,InstallHinfSection DefaultUninstall 132 .\i30flt.inf
