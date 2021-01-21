@@ -17,6 +17,8 @@ the mpact of this to be minimal.
 
 # Downloads #
 
+We have signed binaries available for immediate install on x86 and x64 platforms.
+
 [Download the latest i30Flt release](https://github.com/OSRDrivers/i30Flt/releases/latest)
 
 # Installation #
