@@ -13,7 +13,7 @@ in the offending command you don’t get the problem.
 The directory is not really corrupt at this point and the volume is not immediately corrupted by this change. The result is ugly though and we have anecdotal evidence of a system here at OSR failing to boot after multiple attemps to chkdsk, so we though we'd mitigate the problem while we wait for the real fix to arrive.
 
 This filter blocks any attempts to open a stream that begins with ":$i30:". This blocks more than just the intended path (e.g. ":$i30:$index_allocation") but we believe 
-the mpact of this to be minimal.
+the impact of this to be minimal.
 
 # Downloads #
 
